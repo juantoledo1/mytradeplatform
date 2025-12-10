@@ -1,0 +1,147 @@
+@use "@/assets/css/components/1-main/mixin.scss" as *;
+.footer {
+  margin: auto 0 0 0;
+  padding: 48px 0;
+  background: #fcfbf8;
+  border-top: 1px solid #e2e8f0;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  &__col {
+    width: calc(25% - 15px);
+    max-width: 318px;
+    display: flex;
+    flex-direction: column;
+    p {
+      margin-bottom: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--text-color);
+    }
+    h6 {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: var(--main);
+      margin-bottom: 16px;
+    }
+    & > a {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--text-color);
+      margin-bottom: 8px;
+      &:hover {
+        color: var(--primary);
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--main);
+  margin-bottom: 16px;
+  span {
+    color: var(--primary);
+  }
+}
+.social {
+  display: flex;
+  align-items: center;
+  a {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    margin-right: 16px;
+    color: #6b7280;
+    &:last-child {
+      margin: 0;
+    }
+    &:hover {
+      opacity: 1;
+      color: var(--primary);
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.copy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 33px;
+  border-top: 1px solid #e2e8f0;
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: #6b7280;
+  }
+}
+// 930px
+@include md-lg {
+  .footer {
+    &__col {
+      width: calc(23% - 12px);
+      &:first-child {
+        width: calc(31% - 12px);
+      }
+    }
+  }
+}
+// 750px
+@include sm-md {
+  .footer {
+    &__row {
+      flex-wrap: wrap;
+    }
+    &__col {
+      width: calc(33.3% - 12px);
+      &:first-child {
+        width: 100%;
+        max-width: unset;
+        margin-bottom: 32px;
+        p {
+          max-width: 360px;
+        }
+      }
+    }
+  }
+}
+// 540px
+@include xsm-sm {
+  .footer {
+    &__row {
+      flex-direction: column;
+    }
+    &__col {
+      width: 100%;
+      max-width: unset;
+      margin-bottom: 32px;
+      &:last-child {
+        margin: 0;
+      }
+      &:first-child {
+        width: 100%;
+        max-width: unset;
+        margin-bottom: 32px;
+        p {
+          max-width: 360px;
+        }
+      }
+    }
+  }
+}

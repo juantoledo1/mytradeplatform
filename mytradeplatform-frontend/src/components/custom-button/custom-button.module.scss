@@ -1,0 +1,118 @@
+@use "@/assets/css/components/1-main/mixin.scss" as *;
+.button {
+  font-family: var(--main-font);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 16px;
+  @include transition;
+  &:hover {
+    opacity: 0.8;
+  }
+  &.primary {
+    color: #fff;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    &:hover {
+      opacity: 1;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      background: var(--white);
+    }
+  }
+  &.secondary {
+    color: #2348e0;
+    background: var(--white);
+    font-weight: 600;
+    &:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+  }
+  &.delete {
+    color: #fcfbf8;
+    background: #ef4444;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 14px 16px;
+  }
+  &.disabled {
+    color: var(--text-gray) !important;
+    background: var(--border-color) !important;
+    border-color: var(--border-color);
+    cursor: not-allowed;
+  }
+  &.solid {
+    color: var(--main2);
+    background: var(--white);
+    border: 2px solid #d1d5db;
+    border-radius: 16px;
+    &:hover {
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+  }
+  &.uniq {
+    border: 2px solid var(--white);
+    font-weight: 500;
+    color: var(--white);
+    background: transparent;
+  }
+  &.deposit {
+    color: #fcfbf8;
+    background: #16a34a;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 10px 16px;
+  }
+  &.sm {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 9px 16px;
+    border-width: 1px !important;
+    &.left {
+      svg {
+        margin: 0 6px 0 0;
+      }
+    }
+    svg {
+      margin-right: 6px;
+    }
+  }
+  &.left {
+    svg {
+      margin: 0 16px 0 0;
+    }
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+  }
+}
+// 1180px
+@include xlg-xxlg {
+  .button {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 14px 24px;
+    &.left {
+      svg {
+        margin: 0 12px 0 0;
+      }
+    }
+    svg {
+      margin-left: 12px;
+    }
+  }
+}

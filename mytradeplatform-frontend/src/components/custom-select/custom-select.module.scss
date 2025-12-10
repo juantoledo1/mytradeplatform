@@ -1,0 +1,86 @@
+@use "@/assets/css/components/1-main/mixin.scss" as *;
+@use "@/assets/css/components/1-main/variables.scss" as *;
+.select {
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  &.active {
+    z-index: 3;
+    .select {
+      &__selected {
+        border: 1px solid var(--primary);
+        svg {
+          transform: translateY(-50%) rotate(-180deg);
+          color: var(--primary);
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__selected {
+    position: relative;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--main);
+    background: var(--white);
+    border: 1px solid #e2e8f0;
+    padding: 11px 14px;
+    border-radius: 16px;
+    transition: 0.3s ease;
+    &:hover {
+      border-color: var(--text-color);
+      svg {
+        opacity: 1;
+      }
+    }
+    span {
+      @include ellipsis(1);
+    }
+    svg {
+      position: absolute;
+      top: 50%;
+      opacity: 0.5;
+      color: #020817;
+      right: 12px;
+      width: 14px;
+      transition: 0.3s ease;
+      height: 14px;
+      transform: translateY(-50%);
+    }
+  }
+  &__options {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+
+    background: var(--white);
+    border-top: unset;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  &__option {
+    padding: 12px 14px;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--main);
+    background: var(--white);
+    @include transition;
+    &:last-child {
+      border-bottom: unset;
+    }
+    &:hover {
+      color: var(--primary);
+    }
+    span {
+      @include ellipsis(1);
+    }
+  }
+}
