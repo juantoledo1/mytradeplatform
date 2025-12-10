@@ -1,6 +1,6 @@
 # MyTradePlatform 🚢
 
-A complete platform for sports equipment trading with secure escrow system and integrated shipping management. Built with React + NestJS and deployed on GitLab.
+A complete platform for sports equipment trading with secure escrow system and integrated shipping management. Built with React + NestJS.
 
 > Proyecto iniciado en 2025
 
@@ -36,8 +36,8 @@ A complete platform for sports equipment trading with secure escrow system and i
 
 ```
 MyTradePlatform/
-├── mytradeplatform-frontend/    # React Frontend (Modified)
-├── mytradeplatform-backend/     # NestJS Backend (Complete)
+├── mytradeplatform-frontend/    # React Frontend
+├── mytradeplatform-backend/     # NestJS Backend
 └── README.md
 ```
 
@@ -52,7 +52,7 @@ MyTradePlatform/
 
 1. Navigate to the backend directory:
 ```bash
-cd tradeship-backend
+cd mytradeplatform-backend
 ```
 
 2. Install dependencies:
@@ -85,7 +85,7 @@ npm run start:dev
 
 1. Navigate to the frontend directory:
 ```bash
-cd tradeship-frontend-main
+cd mytradeplatform-frontend
 ```
 
 2. Install dependencies:
@@ -103,15 +103,12 @@ npm run dev
 ### Backend (.env)
 ```env
 # Database
-DATABASE_URL="postgresql://user:password@localhost:5432/tradeshipdb"
-DATABASE_DIRECT_URL="postgresql://user:password@localhost:5432/tradeshipdb"
-SHADOW_DATABASE_URL="postgresql://user:password@localhost:5432/tradeshipdb_shadow"
+DATABASE_URL="postgresql://user:password@localhost:5432/mytradeplatformdb"
+DATABASE_DIRECT_URL="postgresql://user:password@localhost:5432/mytradeplatformdb"
 
 # JWT
 JWT_SECRET="your_jwt_secret"
 JWT_EXPIRES_IN="7d"
-JWT_REFRESH_SECRET="your_refresh_secret"
-JWT_REFRESH_EXPIRES_IN="30d"
 
 # Stripe
 STRIPE_SECRET_KEY="sk_test_..."
@@ -125,14 +122,10 @@ SUPABASE_ITEMS_BUCKET="trade-items"
 # Shippo
 SHIPPO_API_KEY="shippo_test_..."
 
-# Email
-EMAIL_HOST="localhost"
-EMAIL_PORT="1025"
-
-# Server
-PORT=3000
-NODE_ENV=development
+# URLs
 FRONTEND_URL="http://localhost:5173"
+BACKEND_URL="http://localhost:3000"
+API_BASE_URL="http://localhost:3000/api"
 ```
 
 ## 📱 Main Features
@@ -161,16 +154,17 @@ FRONTEND_URL="http://localhost:5173"
 ## 📦 Deployment
 
 ### Backend
-The backend is configured to deploy on Render.com with:
+The backend can be deployed with:
 - PostgreSQL database
 - Configured environment variables
-- Automatic build from GitHub
+- Process managers like PM2 or containerized with Docker
 
 ### Frontend
-The frontend is configured to deploy on Vercel with:
-- Automatic build
-- Environment variables for API
-- Custom domain
+The frontend can be deployed on platforms like:
+- Vercel
+- Netlify
+- AWS S3
+- Or any static hosting service
 
 ## 🤝 Contributing
 
